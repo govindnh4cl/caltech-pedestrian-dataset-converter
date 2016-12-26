@@ -20,7 +20,11 @@ Each `.seq` movie is separated into `.png` images. Each image's filename is cons
 
 (Number of objects: 346621)
 
+# Output
+Inside target directory: ```target_directory/set00/V006/*.jpg```
+  
 # Draw Bounding Boxes
+(haven't tested it yet)
 
 ```
 $ python tests/test_plot_annotations.py
