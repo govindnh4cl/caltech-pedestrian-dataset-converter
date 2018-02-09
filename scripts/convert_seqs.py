@@ -1,3 +1,7 @@
+"""
+This file/scripts converts the images in .seq format to .jpg format
+"""
+
 from __future__ import print_function
 import os
 

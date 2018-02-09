@@ -1,5 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""
+This file/scripts converts the annotations in .vbb format to .json format
+A single json file is created at output
+"""
 
 import os
 import glob
@@ -7,9 +9,14 @@ import json
 from scipy.io import loadmat
 from collections import defaultdict
 
+# ------ User configurable section starts
+ann_dir = 'data/annotations'  # Directory containing 'set00', 'set01' etc directories
+out_file = 'data/annotations.json'  # JSON file to be dumped
+# ------ User configurable section starts
+
 all_obj = 0
 data = defaultdict(dict)
-for dname in sorted(glob.glob('data/annotations/set*')):
+for dname in sorted(glob.glob(ann_dir + '/set*')):
     set_name = os.path.basename(dname)
     data[set_name] = defaultdict(dict)
     for anno_fn in sorted(glob.glob('{}/*.vbb'.format(dname))):
@@ -61,4 +68,4 @@ for dname in sorted(glob.glob('data/annotations/set*')):
         all_obj += n_obj
 
 print('Number of objects:', all_obj)
-json.dump(data, open('data/annotations.json', 'w'))
+json.dump(data, open(out_file, 'w'))
