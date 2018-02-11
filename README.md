@@ -12,7 +12,7 @@ Caltech Pedestrian Dataset Converter
 (For creating videos with annotated pedestrians)
 - OpenCV (with Python binding. Install using `pip install opencv-python`)
 
-# Directory structure
+# Directory Structure
 Have a based_dir with all unzipped files like this:
 * base_dir
   * set00
@@ -36,7 +36,7 @@ Have a based_dir with all unzipped files like this:
     * set09  
 
 # Usage
-* Step 1: Modify the `config.py` for your needs. You'll need to set source and destination directory paths.
+* Step 1: Modify the `config.py` for your needs. You'll need to set source and destination directory paths. In case you only to extract a few sets and not all of them, it can also be set here.
 * Step 2: Execute `python scripts/convert_seqs.py` to extract images from `.seq` files
 * Step 3: Execute `python scripts/convert_annotations.py` to extract annotations from `.vbb` files to a `.json` file
 * Step 4: Execute `python scripts/draw_annotations.py` to dump labeled videos
