@@ -1,5 +1,6 @@
 from __future__ import print_function
 import os
+import sys
 
 from config import Config
 
@@ -34,6 +35,10 @@ def open_save(cfg, set_name, indir, outdir, video_name):
 
 if __name__== '__main__':
     cfg = Config()
+
+    if sys.version_info[0] != 2:
+        print('Warning: Must use Python2 for running this script. '
+              'Otherwise there may not be any results produced.')
 
     for set_name in sorted(cfg.sets):
         set_in_dir = os.path.join(cfg.src_base_dir, set_name)
